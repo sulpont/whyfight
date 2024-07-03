@@ -70,12 +70,11 @@
             top: 20px;
             right: 20px;
             cursor: pointer;
-            background-color: black; /* 背景を黒にして白い部分を隠す */
+            background-color: black;
         }
 
         .logout img {
             width: 100px;
-            /* 適宜調整してください */
         }
 
         .logout form {
@@ -103,7 +102,7 @@
     </div>
 
     <div class="selection-container">
-        <div class="selection" data-sound-hover="{{ asset('sounds/hover.mp3') }}" data-sound-click="{{ asset('sounds/click.mp3') }}">
+        <div class="selection head-select" data-sound-hover="{{ asset('sounds/hover.mp3') }}" data-sound-click="{{ asset('sounds/click.mp3') }}">
             <img src="{{ asset('images/text-cursor.png') }}" alt="カーソル" class="cursor">
             <img src="{{ asset('images/head-select.png') }}" alt="head">
         </div>
@@ -129,6 +128,11 @@
             item.addEventListener('click', function () {
                 clickSound.currentTime = 0;
                 clickSound.play();
+                if (item.classList.contains('head-select')) {
+                    setTimeout(() => {
+                        window.location.href = 'https://gameoversquiz.onrender.com/';
+                    }, 200); // サウンド再生後に遅延させて遷移
+                }
             });
         });
 
