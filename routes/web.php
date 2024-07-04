@@ -11,6 +11,10 @@ Route::get('/title', function () {
     return view('title');
 })->name('title');
 
+Route::get('/prologue', function () {
+    return view('prologue');
+})->name('prologue');
+
 // // デフォルト認証ルート
 // Auth::routes();
 

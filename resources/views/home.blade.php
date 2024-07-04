@@ -106,7 +106,7 @@
             <img src="{{ asset('images/text-cursor.png') }}" alt="カーソル" class="cursor">
             <img src="{{ asset('images/head-select.png') }}" alt="head">
         </div>
-        <div class="selection" data-sound-hover="{{ asset('sounds/hover.mp3') }}" data-sound-click="{{ asset('sounds/click.mp3') }}">
+        <div class="selection body-select" data-sound-hover="{{ asset('sounds/hover.mp3') }}" data-sound-click="{{ asset('sounds/click.mp3') }}">
             <img src="{{ asset('images/text-cursor.png') }}" alt="カーソル" class="cursor">
             <img src="{{ asset('images/body-select.png') }}" alt="body">
         </div>
@@ -131,6 +131,10 @@
                 if (item.classList.contains('head-select')) {
                     setTimeout(() => {
                         window.location.href = 'https://gameoversquiz.onrender.com/';
+                    }, 200); // サウンド再生後に遅延させて遷移
+                } else if (item.classList.contains('body-select')) {
+                    setTimeout(() => {
+                        window.location.href = 'https://jitsunarii.github.io/whyfight/prologue.html';
                     }, 200); // サウンド再生後に遅延させて遷移
                 }
             });
